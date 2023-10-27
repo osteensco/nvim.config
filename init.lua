@@ -4,7 +4,6 @@
 --  NOTE: Must happen before plugins are required (otherwise wrong leader will be used)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 -- Install package manager
 --    https://github.com/folke/lazy.nvim
 --    `:help lazy.nvim.txt` for more info
@@ -79,11 +78,11 @@ require('lazy').setup({
     opts = {
       -- See `:help gitsigns.txt`
       signs = {
-        add = { text = '+' },
-        change = { text = '~' },
-        delete = { text = '_' },
+        add = { text = '++' },
+        change = { text = '+~' },
+        delete = { text = '--' },
         topdelete = { text = '‾' },
-        changedelete = { text = '~' },
+        changedelete = { text = '-~' },
       },
       on_attach = function(bufnr)
         vim.keymap.set('n', '<leader>hp', require('gitsigns').preview_hunk, { buffer = bufnr, desc = 'Preview git hunk' })
@@ -238,7 +237,7 @@ vim.o.termguicolors = true
 -- Keymaps for better default experience
 -- See `:help vim.keymap.set()`
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
-
+vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, {desc = 'directory view'})
 -- Remap for dealing with word wrap
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })

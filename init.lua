@@ -1,5 +1,5 @@
---require("osteensco")
-require("kickstart")
+require("osteensco")
+--require("kickstart")
 
 print("hello from lua")
 

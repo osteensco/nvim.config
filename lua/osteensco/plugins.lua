@@ -23,6 +23,10 @@ return {
             "MunifTanjim/nui.nvim",
         }
     },
+    {
+    	"nvim-treesitter/nvim-treesitter",
+    	build = ":TSUpdate",
+    },
 
 }
 

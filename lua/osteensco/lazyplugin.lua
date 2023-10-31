@@ -12,4 +12,3 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("osteensco/plugins")
-print("hello from lazyplugin")

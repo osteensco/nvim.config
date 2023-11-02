@@ -28,6 +28,10 @@ return {
     	"nvim-treesitter/nvim-treesitter",
     	build = ":TSUpdate",
     },
+    'ThePrimeagen/vim-be-good',
+    "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim",
+    "neovim/nvim-lspconfig",
 
 }
 

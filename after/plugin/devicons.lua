@@ -37,6 +37,12 @@ require'nvim-web-devicons'.setup {
             name = "Txt",
         },
 
+        lua = {
+            icon = "",
+            color = "#000080",
+            cterm_color = "18",
+            name = "Lua",
+        },
 
     };
 }

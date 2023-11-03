@@ -1,6 +1,6 @@
 
 return {
-    
+ 
     {
         'nvim-telescope/telescope.nvim', 
         branch = '0.1.x',
@@ -14,7 +14,6 @@ return {
   	'nvim-lualine/lualine.nvim',
   	requires = { 'nvim-tree/nvim-web-devicons', opt = true }
     },
-    'nvim-tree/nvim-web-devicons',
     {
         "nvim-neo-tree/neo-tree.nvim",
         branch = "v3.x",
@@ -42,9 +41,9 @@ return {
             'L3MON4D3/LuaSnip',
             'saadparwaiz1/cmp_luasnip',
             'rafamadriz/friendly-snippets',
-            
+ 
             'hrsh7th/cmp-nvim-lsp',
-            
+ 
         },
     },
 

@@ -49,4 +49,6 @@ return {
 
     "terrortylor/nvim-comment",
 
+    "sindrets/diffview.nvim",
+
 }

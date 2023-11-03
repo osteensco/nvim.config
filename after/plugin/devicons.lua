@@ -43,6 +43,12 @@ require'nvim-web-devicons'.setup {
             cterm_color = "18",
             name = "Lua",
         },
+        sql = {
+            icon = "󰆼",
+            color = "#d78700",
+            cterm_color = "172",
+            name = "Sql",
+        },
 
     };
 }

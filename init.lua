@@ -1,6 +1,5 @@
 require("osteensco")
---require("kickstart")
-setcolorscheme("monokai")
+setcolorscheme("one_monokai")
 vim.cmd('Neotree')
 
 

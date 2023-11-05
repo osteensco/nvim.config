@@ -35,7 +35,7 @@ require("mason-lspconfig").setup_handlers({
             on_attach = on_attach,
             capabilities = capabilities,
             settings = {
-                ["gopls"] = {
+                [server_name] = {
                     ["ui.semanticTokens"] = true
                 }
             }
@@ -56,17 +56,17 @@ require("mason-lspconfig").setup_handlers({
         }
     end,
 
-    ["pylsp"] = function()
-        require('lspconfig').gopls.setup {
-            on_attach = on_attach,
-            capabilities = capabilities,
-            settings = {
-                ["pylsp"] = {
-                    ["ui.semanticTokens"] = true
-                }
-            }
-        }
-    end
+    -- ["pylsp"] = function()
+    --     require('lspconfig').gopls.setup {
+    --         on_attach = on_attach,
+    --         capabilities = capabilities,
+    --         settings = {
+    --             ["pylsp"] = {
+    --                 ["ui.semanticTokens"] = true
+    --             }
+    --         }
+    --     }
+    -- end
 
 })
 

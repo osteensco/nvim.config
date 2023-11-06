@@ -12,3 +12,6 @@ vim.opt.incsearch = true
 vim.opt.termguicolors = true
 vim.opt.scrolloff = 4
 
+vim.diagnostic.config({underline = {severity = vim.diagnostic.severity.ERROR}, signs = false, virtual_text = false})
+
+

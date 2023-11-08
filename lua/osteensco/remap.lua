@@ -11,6 +11,9 @@ vim.keymap.set({'n','v'}, '<leader>y', '\"+y')
 vim.keymap.set({'n','v'}, '<leader>Y', '\"+Y')
 vim.keymap.set({'n','v'}, '<leader>d', '\"_d')
 vim.keymap.set({'n','v'}, '<leader>F', ':%s/\\<<C-r><C-w>\\>//g<left><left>')
+vim.keymap.set('n', '<leader>cmd', '<Cmd>below 8 new<CR><Cmd>term<CR>')
+vim.keymap.set('n', '<leader>pwr', '<Cmd>lua vim.o.shell = "powershell.exe"<CR><Cmd>below 8 new<CR><Cmd>term<CR>')
+vim.cmd.tnoremap('<Esc> <C-\\><C-n>') 
 
 
 vim.keymap.set('n', '<leader>dt', function ()

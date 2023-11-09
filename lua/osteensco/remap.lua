@@ -28,7 +28,7 @@ vim.keymap.set({'n','v'}, '<leader>Y', '\"+Y')
 vim.keymap.set({'n','v'}, '<leader>d', '\"_d')
 
 --find and replace all
-vim.keymap.set({'n','v'}, '<leader>F', ':%s/\\<<C-r><C-w>\\>//g<left><left>')
+vim.keymap.set({'n','v'}, '<C-L>', ':%s/\\<<C-r><C-w>\\>//g<left><left>')
 
 -- inline diagnostic toogle
 vim.keymap.set('n', '<leader>dt', function ()

@@ -9,6 +9,8 @@ vim.keymap.set({'n', 'i', 'v'}, '<C-s>', '<Esc>:w<Enter>')
 
 --ctrl+/ for commenting out lines
 vim.keymap.set({'n', 'i', 'v'}, '<C-_>', '<Cmd>set operatorfunc=CommentOperator<CR>g@')
+--keymap for wezterm
+vim.keymap.set({'n', 'i', 'v'}, '<C-/>', '<Cmd>set operatorfunc=CommentOperator<CR>g@<CR>')
 
 --git diff open/close
 vim.keymap.set('n', '<leader>gdo', '<Cmd>DiffviewOpen<CR>')

@@ -51,4 +51,17 @@ return {
 
     "sindrets/diffview.nvim",
 
+    {
+        "wookayin/semshi",
+        build = ":UpdateRemotePlugins",
+        version = "*",
+        -- init = function()  -- example, uncomment and edit if customizing default config
+        --     vim.g['semshi#error_sign'] = false
+        -- end,
+        -- config = function()
+        --     -- any configuration post load
+        -- end,
+    },
+
+
 }

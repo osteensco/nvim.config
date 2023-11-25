@@ -55,11 +55,14 @@ return {
         "wookayin/semshi",
         build = ":UpdateRemotePlugins",
         version = "*",
-        -- init = function()  -- example, uncomment and edit if customizing default config
-        --     vim.g['semshi#error_sign'] = false
-        -- end,
+        init = function()  
+            vim.g["semshi#error_sign"] = false
+            vim.g["semshi#simplify_markup"] = false
+            vim.g["semshi#mark_selected_nodes"] = false
+            vim.g["semshi#update_delay_factor"] = 0.001
+        end,
         -- config = function()
-        --     -- any configuration post load
+        --     any configuration post load
         -- end,
     },
 

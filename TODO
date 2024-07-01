@@ -1,0 +1,7 @@
+- tab keybindings
+- cursor position to middle of the window
+- auto formatter keybindings
+- understand OS file differences
+    - CRLF vs something else?
+    - address python lsp errors
+    - git diff experience

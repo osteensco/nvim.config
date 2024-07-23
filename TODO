@@ -1,10 +1,14 @@
-- tab keybindings
-- keybind to shift page up/down and/or place cursor in center of window
-- cursor position to middle of the window
-- auto formatter keybindings
+- keybindings:
+    -window tab
+    -shift page up/down
+    -cursor position to middle of the window
+    -auto formatter
+
 - understand OS file differences
     - CRLF vs something else?
     - address python lsp errors
-    - git diff experience
+
+- git diff experience
+
 - find better python lsp
 

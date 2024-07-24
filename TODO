@@ -12,3 +12,5 @@
 
 - find better python lsp
 
+- ability to navigate between current workspace view and parent terminal view 
+

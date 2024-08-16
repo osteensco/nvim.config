@@ -30,14 +30,26 @@ vim.keymap.set({'n','v'}, '<leader>Y', '\"+Y')
 vim.keymap.set({'n','v'}, '<leader>d', '\"_d')
 
 --find and replace all
-vim.keymap.set({'n','v'}, '<C-L>', ':%s/\\<<C-r><C-w>\\>//g<left><left>')
+vim.keymap.set({'n','v'}, '<C-L>', ':%s/<C-r><C-w>//g<left><left>')
 
 -- inline diagnostic toogle
-vim.keymap.set('n', '<leader>dt', function ()
-    local status = vim.diagnostic.config().virtual_text
-    vim.diagnostic.config({virtual_text = not status})
-end, {desc = '[d]iagnostic [t]oggle for inline text'})
+vim.keymap.set(
+    'n',
+    '<leader>dt',
+    function ()
+        local status = vim.diagnostic.config().virtual_text
+        vim.diagnostic.config({virtual_text = not status})
+    end,
+    {desc = '[d]iagnostic [t]oggle for inline text'}
+)
 
+vim.keymap.set(
+'v',
+'<leader>dt',
+function ()
+    vim.diagnostic.open_float(nil, {focus=true, scope="cursor", border="rounded"})
+end
+)
 
 ----------------------
 --Terminal emulator

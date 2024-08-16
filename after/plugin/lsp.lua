@@ -1,4 +1,4 @@
-                                                                                                                    
+local lspconfig = require("lspconfig")
 local on_attach = function(_, bufnr)
 
   local bufmap = function(keys, func, desc)
@@ -14,8 +14,8 @@ local on_attach = function(_, bufnr)
   bufmap('<leader>D', vim.lsp.buf.type_definition, 'type_definition')
 
   bufmap('gr', require('telescope.builtin').lsp_references, '[g]o to TS [r]eferences')
-  bufmap('<leader>s', require('telescope.builtin').lsp_document_symbols, 'TS lsp_document_symbols')
-  bufmap('<leader>S', require('telescope.builtin').lsp_dynamic_workspace_symbols, 'TS lsp_dynamic_workspace_symbols')
+  bufmap('<leader>s', require('telescope.builtin').lsp_document_symbols, 'TS lsp_document_symbols. similar to github file contents view.')
+  bufmap('<leader>S', require('telescope.builtin').lsp_dynamic_workspace_symbols, 'TS lsp_dynamic_workspace_symbols. looks everywhere.')
 
   bufmap('K', vim.lsp.buf.hover, 'hover docs')
 
@@ -31,7 +31,7 @@ require("mason").setup()
 require("mason-lspconfig").setup_handlers({
 
     function(server_name)
-        require("lspconfig")[server_name].setup {
+        lspconfig[server_name].setup {
             on_attach = on_attach,
             capabilities = capabilities,
             settings = {
@@ -44,7 +44,7 @@ require("mason-lspconfig").setup_handlers({
 
     ["lua_ls"] = function()
         require('neodev').setup()
-        require('lspconfig').lua_ls.setup {
+        lspconfig.lua_ls.setup {
             on_attach = on_attach,
             capabilities = capabilities,
             settings = {
@@ -67,6 +67,10 @@ require("mason-lspconfig").setup_handlers({
     --         }
     --     }
     -- end
+
+
+
+
 
 })
 

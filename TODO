@@ -3,8 +3,13 @@
 
 - understand OS file differences
     - CRLF vs something else?
-    - address python lsp errors
+    - address python lsp errors that pop up on windows
 
 - find better python lsp
+
+-automagic Mason downloads
+    - it would be nice to pass in an array of lsp server names for mason
+        - if not downloaded, download
+        - if update available, update and provide restart message in floating window
 
 

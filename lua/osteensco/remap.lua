@@ -7,6 +7,25 @@ vim.keymap.set('n', '<leader>tk', '<Cmd>Telescope keymaps<CR>', {desc="show kema
 --window manipulation
 vim.keymap.set('n', '<leader>w', '<C-w>', {desc="window control"})
 
+--Neotree toggle
+vim.keymap.set(
+    'n', 
+    '<leader>nt', 
+    function()
+        local manager = require("neo-tree.sources.manager")
+        local renderer = require("neo-tree.ui.renderer")
+        local state = manager.get_state("filesystem")
+        local window_exists = renderer.window_exists(state)
+        
+        if window_exists then
+            vim.cmd(':Neotree close')
+        else
+            vim.cmd(':Neotree') 
+        end
+    end,
+    {desc='Toggles Neotree side bar'}
+)
+
 --ctrl+s for saving
 vim.keymap.set({'n', 'i', 'v'}, '<C-s>', '<Esc>:w<Enter>', {desc="write current file"})
 

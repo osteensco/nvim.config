@@ -66,5 +66,8 @@ return {
         -- end,
     },
 
+    {'VonHeikemen/lsp-zero.nvim', branch = 'v4.x'},
+
 
 }
+

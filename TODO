@@ -1,6 +1,5 @@
 - keybindings:
     -window tab
-    -auto formatter
 
 - understand OS file differences
     - CRLF vs something else?

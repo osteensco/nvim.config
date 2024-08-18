@@ -18,6 +18,11 @@ require("neo-tree").setup({
             hide_hidden = false
         },
 
+        follow_current_file = {
+            enabled=true
+        },
+
+        hijack_netrw_behavior = "open_default",
 
         window = {
             mappings = {

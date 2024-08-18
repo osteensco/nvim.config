@@ -1,4 +1,7 @@
 local lspconfig = require("lspconfig")
+
+local lsp_zero = require("lsp-zero")
+
 local on_attach = function(_, bufnr)
 
   local bufmap = function(keys, func, desc)
@@ -26,6 +29,18 @@ end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
+
+--autoformater
+lsp_zero.format_on_save({
+    
+    format_ops = {
+        async = false,
+        timeout_ms = 10000,
+    },
+    servers = {
+        ['gopls'] = {'go'}
+    }
+})
 
 require("mason").setup()
 require("mason-lspconfig").setup_handlers({

@@ -47,7 +47,7 @@ lsp_zero.format_on_save({
 
 require("mason").setup()
 mason_lspconfig.setup({
-    ensure_installed = {"lua_ls", "gopls", "pylsp", "tsserver", "bashls", "cssls", "html", "jsonls", "sqlls"}
+    ensure_installed = {"lua_ls", "gopls", "basedpyright", "tsserver", "bashls", "cssls", "html", "jsonls", "sqlls"}
 })
 mason_lspconfig.setup_handlers({
     function(server_name)
@@ -65,7 +65,6 @@ mason_lspconfig.setup_handlers({
 
 -- lspconfig.lua_ls.setup({})
 -- lspconfig.gopls.setup({})
-
 
     -- ["pylsp"] = function()
     --     require('lspconfig').gopls.setup {

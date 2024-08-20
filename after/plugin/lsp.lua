@@ -63,20 +63,18 @@ mason_lspconfig.setup_handlers({
     end
 })
 
+
 -- lspconfig.lua_ls.setup({})
 -- lspconfig.gopls.setup({})
-
-    -- ["pylsp"] = function()
-    --     require('lspconfig').gopls.setup {
-    --         on_attach = on_attach,
-    --         capabilities = capabilities,
-    --         settings = {
-    --             ["pylsp"] = {
-    --                 ["ui.semanticTokens"] = true
-    --             }
-    --         }
-    --     }
-    -- end
+lspconfig.basedpyright.setup({
+    capabilities = capabilities,
+    settings = {
+        basedpyright = {
+            typeCheckingMode = "standard",
+            ["ui.semanticTokens"] = true
+        }
+    }
+})
 
 
 

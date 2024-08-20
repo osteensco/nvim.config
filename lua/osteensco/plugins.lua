@@ -51,20 +51,20 @@ return {
 
     "sindrets/diffview.nvim",
 
-    {
-        "wookayin/semshi",
-        build = ":UpdateRemotePlugins",
-        version = "*",
-        init = function()  
-            vim.g["semshi#error_sign"] = false
-            vim.g["semshi#simplify_markup"] = false
-            vim.g["semshi#mark_selected_nodes"] = false
-            vim.g["semshi#update_delay_factor"] = 0.001
-        end,
-        -- config = function()
-        --     any configuration post load
-        -- end,
-    },
+    -- {
+    --     "wookayin/semshi",
+    --     build = ":UpdateRemotePlugins",
+    --     version = "*",
+    --     init = function()  
+    --         vim.g["semshi#error_sign"] = false
+    --         vim.g["semshi#simplify_markup"] = false
+    --         vim.g["semshi#mark_selected_nodes"] = false
+    --         vim.g["semshi#update_delay_factor"] = 0.001
+    --     end,
+    --     -- config = function()
+    --     --     any configuration post load
+    --     -- end,
+    -- },
 
     {'VonHeikemen/lsp-zero.nvim', branch = 'v4.x'},
 

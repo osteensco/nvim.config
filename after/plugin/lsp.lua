@@ -1,4 +1,7 @@
+
 local lspconfig = require("lspconfig")
+
+local mason_lspconfig = require("mason-lspconfig")
 
 local lsp_zero = require("lsp-zero")
 
@@ -43,8 +46,10 @@ lsp_zero.format_on_save({
 })
 
 require("mason").setup()
-require("mason-lspconfig").setup_handlers({
-
+mason_lspconfig.setup({
+    ensure_installed = {"lua_ls", "gopls", "pylsp", "tsserver", "bashls", "cssls", "html", "jsonls", "sqlls"}
+})
+mason_lspconfig.setup_handlers({
     function(server_name)
         lspconfig[server_name].setup {
             on_attach = on_attach,
@@ -55,21 +60,12 @@ require("mason-lspconfig").setup_handlers({
                 }
             }
         }
-    end,
+    end
+})
 
-    ["lua_ls"] = function()
-        require('neodev').setup()
-        lspconfig.lua_ls.setup {
-            on_attach = on_attach,
-            capabilities = capabilities,
-            settings = {
-                Lua = {
-                    workspace = { checkThirdParty = false },
-                    telemetry = { enable = false },
-                },
-            }
-        }
-    end,
+-- lspconfig.lua_ls.setup({})
+-- lspconfig.gopls.setup({})
+
 
     -- ["pylsp"] = function()
     --     require('lspconfig').gopls.setup {
@@ -87,7 +83,6 @@ require("mason-lspconfig").setup_handlers({
 
 
 
-})
 
 
 

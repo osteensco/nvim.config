@@ -45,10 +45,12 @@ lsp_zero.format_on_save({
     }
 })
 
-require("mason").setup()
+require('mason').setup({
+    PATH = "/usr/local/go/bin:" .. vim.fn.getenv("PATH")
+})
 mason_lspconfig.setup({
     ensure_installed = {
-        "sqlls",
+        -- "sqlls",
         "gopls",
         "lua_ls", 
         "basedpyright", 
@@ -74,8 +76,18 @@ mason_lspconfig.setup_handlers({
 
 
 -- lspconfig.lua_ls.setup({})
--- lspconfig.gopls.setup({})
+-- lspconfig.gopls.setup({
+--     on_attach = on_attach,
+--     capabilities = capabilities,
+--     settings = {
+--         go = {
+--             ["ui.semanticTokens"] = true
+--         }
+--     }
+-- })
+
 lspconfig.basedpyright.setup({
+    on_attach = on_attach,
     capabilities = capabilities,
     settings = {
         python = {

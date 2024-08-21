@@ -89,7 +89,6 @@ setshell = function (shell)
     vim.o.shell = shell
 end
 
-print(DEFAULTSHELL)
 --open shell window below file
 openterm = function ()
     vim.cmd('below 8 new')

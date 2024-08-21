@@ -68,6 +68,8 @@ return {
 
     {'VonHeikemen/lsp-zero.nvim', branch = 'v4.x'},
 
+    "otavioschwanck/arrow.nvim",
+
     -- {
     --     "linux-cultist/venv-selector.nvim",
     --     dependencies = {

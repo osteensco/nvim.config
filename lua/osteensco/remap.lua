@@ -84,12 +84,12 @@ getcurrshell = function ()
     return vim.o.shell
 end
 DEFAULTSHELL = getcurrshell()
-
 --set the shell openterm opens
 setshell = function (shell)
     vim.o.shell = shell
 end
 
+print(DEFAULTSHELL)
 --open shell window below file
 openterm = function ()
     vim.cmd('below 8 new')

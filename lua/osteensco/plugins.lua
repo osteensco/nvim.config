@@ -68,38 +68,38 @@ return {
 
     {'VonHeikemen/lsp-zero.nvim', branch = 'v4.x'},
 
-    {
-        "linux-cultist/venv-selector.nvim",
-        dependencies = {
-            "neovim/nvim-lspconfig", 
-            "mfussenegger/nvim-dap", 
-            "mfussenegger/nvim-dap-python", --optional
-            {"nvim-telescope/telescope.nvim", branch = "0.1.x", dependencies = { "nvim-lua/plenary.nvim" } },
-        },
-        lazy = false,
-        branch = "regexp", -- This is the regexp branch, use this for the new version
-        config = function()
-            require("venv-selector").setup({
-                settings = {
-                    search = {
-                        cwd = false,
-                        my_venvs = {
-                            command = "fdfind python$ ./venv"
-                        }
-                    },
-                    options = {
-                        enable_default_searches = false,
-                        notify_user_on_venv_activation = true,
-                        debug = true,
-                        fd_binary_name = "fdfind"
-                    }
-                }
-            })
-        end,
-        keys = {
-            { "<leader>v", "<cmd>VenvSelect<cr>" },
-        },
-    },
+    -- {
+    --     "linux-cultist/venv-selector.nvim",
+    --     dependencies = {
+    --         "neovim/nvim-lspconfig", 
+    --         "mfussenegger/nvim-dap", 
+    --         "mfussenegger/nvim-dap-python", --optional
+    --         {"nvim-telescope/telescope.nvim", branch = "0.1.x", dependencies = { "nvim-lua/plenary.nvim" } },
+    --     },
+    --     lazy = false,
+    --     branch = "regexp", -- This is the regexp branch, use this for the new version
+    --     config = function()
+    --         require("venv-selector").setup({
+    --             settings = {
+    --                 search = {
+    --                     cwd = false,
+    --                     my_venvs = {
+    --                         command = "fdfind python$ ./venv"
+    --                     }
+    --                 },
+    --                 options = {
+    --                     enable_default_searches = false,
+    --                     notify_user_on_venv_activation = true,
+    --                     debug = true,
+    --                     fd_binary_name = "fdfind"
+    --                 }
+    --             }
+    --         })
+    --     end,
+    --     keys = {
+    --         { "<leader>v", "<cmd>VenvSelect<cr>" },
+    --     },
+    -- },
 
 
 }

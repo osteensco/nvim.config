@@ -1,5 +1,4 @@
-
-require'nvim-web-devicons'.setup {
+require 'nvim-web-devicons'.setup {
     override = {
 
         py = {
@@ -50,9 +49,5 @@ require'nvim-web-devicons'.setup {
             name = "Sql",
         },
 
-    };
+    },
 }
-
-
-
-

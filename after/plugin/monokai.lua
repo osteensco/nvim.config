@@ -4,5 +4,3 @@ require('monokai').setup {
 
 
 }
-
-

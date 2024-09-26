@@ -1,8 +1,7 @@
-
 return {
- 
+
     {
-        'nvim-telescope/telescope.nvim', 
+        'nvim-telescope/telescope.nvim',
         branch = '0.1.x',
         dependencies = { 'nvim-lua/plenary.nvim' }
     },
@@ -11,8 +10,8 @@ return {
     "cpea2506/one_monokai.nvim",
 
     {
-  	'nvim-lualine/lualine.nvim',
-  	requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+        'nvim-lualine/lualine.nvim',
+        requires = { 'nvim-tree/nvim-web-devicons', opt = true }
     },
     {
         "nvim-neo-tree/neo-tree.nvim",
@@ -24,8 +23,8 @@ return {
         }
     },
     {
-    	"nvim-treesitter/nvim-treesitter",
-    	build = ":TSUpdate",
+        "nvim-treesitter/nvim-treesitter",
+        build = ":TSUpdate",
     },
     'ThePrimeagen/vim-be-good',
 
@@ -33,7 +32,7 @@ return {
     "williamboman/mason-lspconfig.nvim",
     "neovim/nvim-lspconfig",
 
-    'folke/neodev.nvim', 
+    'folke/neodev.nvim',
 
     {
         'hrsh7th/nvim-cmp',
@@ -55,7 +54,7 @@ return {
     --     "wookayin/semshi",
     --     build = ":UpdateRemotePlugins",
     --     version = "*",
-    --     init = function()  
+    --     init = function()
     --         vim.g["semshi#error_sign"] = false
     --         vim.g["semshi#simplify_markup"] = false
     --         vim.g["semshi#mark_selected_nodes"] = false
@@ -66,15 +65,19 @@ return {
     --     -- end,
     -- },
 
-    {'VonHeikemen/lsp-zero.nvim', branch = 'v4.x'},
+    { 'VonHeikemen/lsp-zero.nvim', branch = 'v4.x' },
 
     "otavioschwanck/arrow.nvim",
+    -- { dir = "/mnt/d/Programming Stuff/opensauce/arrow.nvim" },
+
+
+
 
     -- {
     --     "linux-cultist/venv-selector.nvim",
     --     dependencies = {
-    --         "neovim/nvim-lspconfig", 
-    --         "mfussenegger/nvim-dap", 
+    --         "neovim/nvim-lspconfig",
+    --         "mfussenegger/nvim-dap",
     --         "mfussenegger/nvim-dap-python", --optional
     --         {"nvim-telescope/telescope.nvim", branch = "0.1.x", dependencies = { "nvim-lua/plenary.nvim" } },
     --     },
@@ -105,4 +108,3 @@ return {
 
 
 }
-

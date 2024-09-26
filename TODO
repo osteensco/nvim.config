@@ -1,12 +1,5 @@
 TODO
 
-- fix telescope search within files (<leader>ts)
 
-- setup venv selector config
-    - alternative is to use pyrightconfig.json in python projects
-
-- understand OS file differences
-    - CRLF vs something else?
-    - Unix vs windows filetype?
 
 

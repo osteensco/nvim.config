@@ -19,7 +19,7 @@ require("neo-tree").setup({
         },
 
         follow_current_file = {
-            enabled=true
+            enabled = true
         },
 
         hijack_netrw_behavior = "open_default",
@@ -31,11 +31,7 @@ require("neo-tree").setup({
                 ["h"] = "toggle_hidden"
             }
         }
-    
+
     },
 
 })
-
-
-
-

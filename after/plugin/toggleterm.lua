@@ -10,6 +10,8 @@ require('toggleterm').setup({
     close_on_exit = false,
     float_opts = {
         border = 'double',
+        width = math.ceil(math.min(vim.o.columns, math.max(80, vim.o.columns - 15))),
+        height = math.ceil(math.min(vim.o.lines, math.max(20, vim.o.lines - 5))),
         winblend = 0,
         title_pos = 'center',
     },

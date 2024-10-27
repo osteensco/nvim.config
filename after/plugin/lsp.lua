@@ -64,7 +64,7 @@ mason_lspconfig.setup({
         "gopls",
         "lua_ls",
         "basedpyright",
-        "ts_ls",
+        "tsserver",
         "bashls",
         "cssls",
         "html",

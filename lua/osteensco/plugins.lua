@@ -73,7 +73,13 @@ return {
     {
         'akinsho/toggleterm.nvim',
         version = '*',
-    }
+    },
+
+    {
+        'osteensco/discordStatus.nvim',
+        -- dir = "/mnt/d/Programming Stuff/opensauce/discordStatus.nvim",
+        dependencies = { "osteensco/dotenv.nvim" },
+    },
 
 
     -- {

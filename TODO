@@ -1,5 +1,11 @@
 TODO
 
-
+- keymap that send floating window contents to leftmost buffer
+    - inline docs
+    - inline error messages
+    - etc
+- clear specific buffer?
+- oil with neotree view
+- custom toggle term and multiplexer
 
 

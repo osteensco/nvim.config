@@ -1,6 +1,1 @@
-require('nvim_comment').setup({
-
-    comment_empty = false,
-    line_mapping = "<C-_>",
-
-})
+require('nvim_comment').setup()

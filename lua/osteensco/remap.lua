@@ -3,8 +3,11 @@ vim.g.mapleader = " "
 --show keymap help in telescope
 vim.keymap.set('n', '<leader>tk', '<Cmd>Telescope keymaps<CR>', { desc = "show kemaps" })
 
+-- show neovim help docs in telescope
+vim.keymap.set('n', '<leader>th', '<Cmd>Telescope help_tags<CR>', { desc = "show neovim help docs" })
+
 --window manipulation
-vim.keymap.set('n', '<leader>w', '<C-w>', { desc = "window control" })
+vim.keymap.set('n', '<leader>w', '<C-w>', { desc = "window manipulation" })
 
 --Neotree toggle
 vim.keymap.set('n', '<leader>nt', '<Cmd>Neotree toggle<CR>', { desc = 'Toggles Neotree side bar' })
@@ -13,12 +16,17 @@ vim.keymap.set('n', '<leader>nb', '<Cmd>Neotree buffers float<CR>', { desc = 'Op
 --ctrl+s for saving
 vim.keymap.set({ 'n', 'i', 'v' }, '<C-s>', '<Esc>:w<Enter>', { desc = "write current file" })
 
+--source current buffer
+vim.keymap.set('n', '<leader><leader>s', function()
+        vim.cmd('source %')
+        vim.cmd.echo("'file sourced!'")
+    end,
+    { desc = "source current file" })
+
 --ctrl+/ for commenting out lines
-vim.keymap.set({ 'n', 'i', 'v' }, '<C-_>', '<Cmd>set operatorfunc=CommentOperator<CR>g@',
+vim.keymap.set('n', '<C-_>', '<Cmd>set operatorfunc=CommentOperator<CR>g@l', { desc = "comment/uncomment current line" })
+vim.keymap.set('v', '<C-_>', '<Cmd>set operatorfunc=CommentOperator<CR>g@',
     { desc = "comment/uncomment current line or selection" })
---keymap for wezterm
-vim.keymap.set({ 'n', 'i', 'v' }, '<C-/>', '<Cmd>set operatorfunc=CommentOperator<CR>g@<CR>',
-    { desc = "wezterm comment/uncomment current line or selection" })
 
 --git diff open/close
 vim.keymap.set('n', '<leader>gdo', '<Cmd>DiffviewOpen<CR>', { desc = "[g]it [d]iff [o]pen" })

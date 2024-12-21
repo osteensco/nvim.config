@@ -24,8 +24,16 @@ vim.keymap.set('n', '<leader><leader>s', function()
     { desc = "source current file" })
 
 --ctrl+/ for commenting out lines
+--single line
 vim.keymap.set('n', '<C-_>', '<Cmd>set operatorfunc=CommentOperator<CR>g@l', { desc = "comment/uncomment current line" })
+--macos/iterm2
+vim.keymap.set('n', '<C-/>', '<Cmd>set operatorfunc=CommentOperator<CR>g@l', { desc = "comment/uncomment current line" })
+
+--multi line
 vim.keymap.set('v', '<C-_>', '<Cmd>set operatorfunc=CommentOperator<CR>g@',
+    { desc = "comment/uncomment current line or selection" })
+--macos/iterm2
+vim.keymap.set('v', '<C-/>', '<Cmd>set operatorfunc=CommentOperator<CR>g@',
     { desc = "comment/uncomment current line or selection" })
 
 --git diff open/close

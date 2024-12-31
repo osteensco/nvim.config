@@ -3,7 +3,9 @@ return {
     {
         'nvim-telescope/telescope.nvim',
         branch = '0.1.x',
-        dependencies = { 'nvim-lua/plenary.nvim' }
+        dependencies = { 'nvim-lua/plenary.nvim',
+            { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' }
+        },
     },
 
     'tanvirtin/monokai.nvim',
@@ -13,6 +15,16 @@ return {
         'nvim-lualine/lualine.nvim',
         requires = { 'nvim-tree/nvim-web-devicons', opt = true }
     },
+    -- TODO
+    --  - fork oil and add in neotree's file expansion and sidebar location.
+    -- {
+    --     'stevearc/oil.nvim',
+    --     ---@module 'oil'
+    --     ---@type oil.SetupOpts
+    --     opts = {},
+    --     -- Optional dependencies
+    --     dependencies = { { "nvim-tree/nvim-web-devicons", opts = {} } },
+    -- },
     {
         "nvim-neo-tree/neo-tree.nvim",
         branch = "v3.x",
@@ -26,25 +38,76 @@ return {
         "nvim-treesitter/nvim-treesitter",
         build = ":TSUpdate",
     },
-    'ThePrimeagen/vim-be-good',
+
+    {
+        'saghen/blink.cmp',
+        dependencies = {
+            'rafamadriz/friendly-snippets',
+            'L3MON4D3/LuaSnip',
+        },
+
+        version = '*',
+
+        opts = {
+            snippets = {
+                expand = function(snippet) require('luasnip').lsp_expand(snippet) end,
+                active = function(filter)
+                    if filter and filter.direction then
+                        return require('luasnip').jumpable(filter.direction)
+                    end
+                    return require('luasnip').in_snippet()
+                end,
+                jump = function(direction) require('luasnip').jump(direction) end,
+            },
+            keymap = {
+                preset = 'none',
+                ['<C-space>'] = { 'show', 'show_documentation', 'hide_documentation' },
+                ['<C-h>'] = { 'hide', 'fallback' },
+                ['<CR>'] = { 'accept', 'fallback' },
+
+                ['<Tab>'] = { 'select_next', 'fallback' },
+                ['<S-Tab>'] = { 'select_prev', 'fallback' },
+
+                ['<Up>'] = { 'select_prev', 'fallback' },
+                ['<Down>'] = { 'select_next', 'fallback' },
+                ['<C-p>'] = { 'snippet_backward', 'fallback' },
+                ['<C-n>'] = { 'snippet_forward', 'fallback' },
+
+                ['<C-b>'] = { 'scroll_documentation_up', 'fallback' },
+                ['<C-f>'] = { 'scroll_documentation_down', 'fallback' },
+            },
+
+            appearance = {
+                use_nvim_cmp_as_default = true,
+                nerd_font_variant = 'mono'
+            },
+
+            signature = { enabled = true }
+        },
+    },
 
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
-    "neovim/nvim-lspconfig",
-
-    'folke/neodev.nvim',
-
     {
-        'hrsh7th/nvim-cmp',
-        dependencies = {
-            'L3MON4D3/LuaSnip',
-            'saadparwaiz1/cmp_luasnip',
-            'rafamadriz/friendly-snippets',
+        "neovim/nvim-lspconfig",
+        dependencies = { 'saghen/blink.cmp' },
 
-            'hrsh7th/cmp-nvim-lsp',
-
-        },
     },
+
+    -- 'folke/neodev.nvim',
+
+
+    -- {
+    --     'hrsh7th/nvim-cmp',
+    --     dependencies = {
+    --         'L3MON4D3/LuaSnip',
+    --         'saadparwaiz1/cmp_luasnip',
+    --         'rafamadriz/friendly-snippets',
+    --
+    --         'hrsh7th/cmp-nvim-lsp',
+    --
+    --     },
+    -- },
 
     "terrortylor/nvim-comment",
 
@@ -81,7 +144,9 @@ return {
         dependencies = { "osteensco/dotenv.nvim" },
     },
 
-
+    {
+        dir = "/Users/scottosteen/desktop/repos/neovimPlugins/shadow-clone.nvim",
+    },
     -- {
     --     "linux-cultist/venv-selector.nvim",
     --     dependencies = {

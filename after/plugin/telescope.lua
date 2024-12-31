@@ -1,3 +1,20 @@
+local builtin = require('telescope.builtin')
+
+
+local function get_telescope_pickers_with_theme(default_theme)
+    local pickers = {}
+
+    for picker_name, _ in pairs(builtin) do
+        pickers[picker_name] = {
+            theme = default_theme or "ivy",
+        }
+    end
+
+    return pickers
+end
+
+local pickers = get_telescope_pickers_with_theme()
+
 require('telescope').setup({
     defaults = {
         mappings = {
@@ -8,10 +25,13 @@ require('telescope').setup({
                 ["<C-r>"] = "remove_selection",
             },
         }
-    }
+    },
+    pickers = pickers,
+    extensions = { fzf = {} }
 })
 
-local builtin = require('telescope.builtin')
+require('telescope').load_extension('fzf')
+
 -- vim.keymap.set('n', '<leader>tff', builtin.find_files, {desc = '[t]elescope [f]ind [f]iles, looks at all files'})
 vim.keymap.set('n', '<leader>tf', builtin.git_files,
     { desc = '[t]elescope project [f]iles, looks at files within git repo' })

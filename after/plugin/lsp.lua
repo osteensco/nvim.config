@@ -30,8 +30,7 @@ local on_attach = function(_, bufnr)
     end, {})
 end
 
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
+local capabilities = require("blink.cmp").get_lsp_capabilities()
 
 --autoformater
 lsp_zero.extend_lspconfig({
@@ -40,20 +39,6 @@ lsp_zero.extend_lspconfig({
         lsp_zero.buffer_autoformat()
     end
 })
-
--- lsp_zero.format_on_save({
-
---     format_ops = {
---         async = false,
---         timeout_ms = 10000,
---     },
---     servers = {
---         ['gopls'] = {'go'},
---         ['html-lsp'] = {'html'},
---         ['lua_ls'] = {'lua'},
---         ['ts_ls'] = {'typescript', 'javascript'},
---     }
--- })
 
 require('mason').setup({
     PATH = "/usr/local/go/bin:" .. vim.fn.getenv("PATH")
@@ -70,6 +55,8 @@ mason_lspconfig.setup({
         "html",
         "jsonls" }
 })
+
+-- generic fallback setup
 mason_lspconfig.setup_handlers({
     function(server_name)
         lspconfig[server_name].setup {
@@ -85,8 +72,9 @@ mason_lspconfig.setup_handlers({
 })
 
 
-
+-- language specific setups
 lspconfig.lua_ls.setup({
+    on_attach = on_attach,
     on_init = function(client)
         if client.workspace_folders then
             local path = client.workspace_folders[1].name
@@ -104,14 +92,14 @@ lspconfig.lua_ls.setup({
             -- Make the server aware of Neovim runtime files
             workspace = {
                 checkThirdParty = false,
-                library = {
-                    vim.env.VIMRUNTIME
-                    -- Depending on the usage, you might want to add additional paths here.
-                    -- "${3rd}/luv/library"
-                    -- "${3rd}/busted/library",
-                }
+                -- library = {
+                --     vim.env.VIMRUNTIME
+                --     -- Depending on the usage, you might want to add additional paths here.
+                --     -- "${3rd}/luv/library"
+                --     -- "${3rd}/busted/library",
+                -- }
                 -- or pull in all of 'runtimepath'. NOTE: this is a lot slower and will cause issues when working on your own configuration (see https://github.com/neovim/nvim-lspconfig/issues/3189)
-                -- library = vim.api.nvim_get_runtime_file("", true)
+                library = vim.api.nvim_get_runtime_file("", true)
             }
         })
     end,

@@ -1,10 +1,12 @@
 vim.g.mapleader = " "
 
 --show keymap help in telescope
-vim.keymap.set('n', '<leader>tk', '<Cmd>Telescope keymaps<CR>', { desc = "show kemaps" })
+vim.keymap.set('n', '<leader>tk', '<Cmd>Telescope keymaps<CR>', { desc = "[T]elescope kemaps" })
 
 -- show neovim help docs in telescope
-vim.keymap.set('n', '<leader>th', '<Cmd>Telescope help_tags<CR>', { desc = "show neovim help docs" })
+vim.keymap.set('n', '<leader>th', '<Cmd>Telescope help_tags<CR>', { desc = "[T]elescope help docs" })
+
+vim.keymap.set('n', '<leader>tp', '<Cmd>Telescope builtin<CR>', { desc = "[T]elescope pickers" })
 
 --window manipulation
 vim.keymap.set('n', '<leader>w', '<C-w>', { desc = "window manipulation" })

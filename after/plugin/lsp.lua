@@ -9,21 +9,21 @@ local on_attach = function(_, bufnr)
         vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
     end
 
-    bufmap('<leader>r', vim.lsp.buf.rename, 'buf.rename')
-    bufmap('<leader>a', vim.lsp.buf.code_action, 'buf.code_action')
+    bufmap('<leader>r', vim.lsp.buf.rename, 'lsp action - buf.rename')
+    bufmap('<leader>a', vim.lsp.buf.code_action, 'lsp action - buf.code_action')
 
-    bufmap('gd', vim.lsp.buf.definition, '[g]o to [d]efinition')
-    bufmap('gD', vim.lsp.buf.declaration, '[g]o to [D]eclaration')
-    bufmap('gI', vim.lsp.buf.implementation, '[g]o to [I]mplementation')
-    bufmap('<leader>D', vim.lsp.buf.type_definition, 'type_definition')
+    bufmap('gd', vim.lsp.buf.definition, 'lsp action - [g]o to [d]efinition')
+    bufmap('gD', vim.lsp.buf.declaration, 'lsp action - [g]o to [D]eclaration')
+    bufmap('gI', vim.lsp.buf.implementation, 'lsp action - [g]o to [I]mplementation')
+    bufmap('<leader>D', vim.lsp.buf.type_definition, 'lsp action - type_definition')
 
-    bufmap('gr', require('telescope.builtin').lsp_references, '[g]o to TS [r]eferences')
+    bufmap('gr', require('telescope.builtin').lsp_references, 'lsp action - [g]o to Telescope [r]eferences')
     bufmap('<leader>s', require('telescope.builtin').lsp_document_symbols,
-        'TS lsp_document_symbols. similar to github file contents view.')
+        'lsp action - Telescope lsp_document_symbols. similar to github file contents view.')
     bufmap('<leader>S', require('telescope.builtin').lsp_dynamic_workspace_symbols,
-        'TS lsp_dynamic_workspace_symbols. looks everywhere.')
+        'lsp action - Telescope lsp_dynamic_workspace_symbols. looks everywhere.')
 
-    bufmap('K', vim.lsp.buf.hover, 'hover docs')
+    bufmap('K', vim.lsp.buf.hover, 'lsp action - hover docs')
 
     vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
         vim.lsp.buf.format()

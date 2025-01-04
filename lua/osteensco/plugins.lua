@@ -145,7 +145,7 @@ return {
     },
 
     {
-        dir = "/Users/scottosteen/desktop/repos/neovimPlugins/shadow-clone.nvim",
+        dir = "/mnt/d/Programming stuff/opensauce/shadow-clone.nvim",
     },
     -- {
     --     "linux-cultist/venv-selector.nvim",

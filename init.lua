@@ -1,2 +1,2 @@
 require("osteensco")
-setcolorscheme("one_monokai")
+-- Setcolorscheme("one_monokai")

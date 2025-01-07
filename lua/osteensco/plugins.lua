@@ -15,6 +15,11 @@ return {
         'nvim-lualine/lualine.nvim',
         requires = { 'nvim-tree/nvim-web-devicons', opt = true }
     },
+
+    -- mini plugins
+    { 'echasnovski/mini.indentscope', version = '*' },
+    { 'echasnovski/mini.pairs',       version = '*' },
+
     -- TODO
     --  - fork oil and add in neotree's file expansion and sidebar location.
     -- {

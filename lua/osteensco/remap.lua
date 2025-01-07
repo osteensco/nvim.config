@@ -15,6 +15,9 @@ vim.keymap.set('n', '<leader>w', '<C-w>', { desc = "window manipulation" })
 vim.keymap.set('n', '<leader>nt', '<Cmd>Neotree toggle<CR>', { desc = 'Toggles Neotree side bar' })
 vim.keymap.set('n', '<leader>nb', '<Cmd>Neotree buffers float<CR>', { desc = 'Opens Neotree buffers in floating window' })
 
+--quit current window
+vim.keymap.set('n', '<leader>q', '<Cmd>q<CR>', { desc = "Quit current window." })
+
 --ctrl+s for saving
 vim.keymap.set({ 'n', 'i', 'v' }, '<C-s>', '<Esc>:w<Enter>', { desc = "write current file" })
 

@@ -2,8 +2,7 @@ require('discordStatus').setup({
     openStatus = {
         "Programming",
         "Coding",
-        "Neovim shenanigans",
-        "Building stuff",
-        "Developing software",
+        "Writing software",
+        "Building stuff"
     }
 })
